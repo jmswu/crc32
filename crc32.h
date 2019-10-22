@@ -19,6 +19,12 @@
 /* choose one from above */
 #define CRC32_POLY_DEFAULT      CRC32_POLY_BZIP2
 
+/* calculate CRC32 value
+ *
+ * @param uint8_t *data - pointer to data
+ * @param uint16_t len - size of the data in byte
+ * @return calculated CRC32 value
+ */
 uint32_t crc32(uint8_t *data, uint16_t len);
 
 #endif // CRC32_H_INCLUDED
