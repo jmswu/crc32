@@ -5,8 +5,10 @@ uint32_t crc32(uint8_t *data, uint16_t len){
     uint32_t crc32;
     uint8_t i;
 
+    /* initial CRC32 with initial value */
     crc32 = CRC32_INITIAL_VALUE;
 
+    /* calculate the CRC32 */
     while(len--){
 
         crc32 = crc32 ^ ((uint32_t)(*data++ << 24));
@@ -19,6 +21,7 @@ uint32_t crc32(uint8_t *data, uint16_t len){
         }
     }
 
+    /* do the final XOR */
     crc32 = crc32 ^ CRC32_FINAL_XOR_VAL;
 
     return crc32;
